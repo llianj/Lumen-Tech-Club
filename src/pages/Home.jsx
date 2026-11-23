@@ -2,8 +2,10 @@ import { Link } from 'react-router-dom'
 import Section from '../components/Section.jsx'
 import Star from '../components/Star.jsx'
 import Logo from '../components/Logo.jsx'
-import BookCard from '../components/BookCard.jsx'
-import { cycles } from '../data/books.js'
+import Sobre from './Sobre.jsx'
+import Leituras from './Leituras.jsx'
+import FAQ from './FAQ.jsx'
+import Contato from './Contato.jsx'
 
 const passos = [
   ['01', 'Dê um oi.', 'Fale com a gente por e-mail ou Instagram e conte que quer participar.'],
@@ -12,7 +14,6 @@ const passos = [
 ]
 
 export default function Home() {
-  const atual = cycles.find((c) => c.status === 'atual')
   return (
     <>
       <section className="hero grid-bg">
@@ -37,25 +38,24 @@ export default function Home() {
       </section>
       <div className="strip"><div className="container">MENOS SCROLL. MAIS TROCA. ✦ CONHECIMENTO SE MULTIPLICA.</div></div>
 
-      <Section tint="green" eyebrow="01 / PODE CHEGAR" title="Preciso programar?">
+      <Section tint="green" eyebrow="PODE CHEGAR" title="Preciso programar?">
         <p className="answer card c-green">Não! Só precisa ter curiosidade.</p>
         <p>Nem saber código. Nem ler rápido. Nem já conhecer todos os assuntos. Seu ponto de vista já tem lugar aqui.</p>
-        <Link to="/faq" className="btn">Dúvidas são bem-vindas :)</Link>
       </Section>
 
-      <Section eyebrow="02 / NA NOSSA ESTANTE" title="Estamos lendo agora">
-        {atual && <BookCard book={atual} />}
-        <p style={{ marginTop: 24 }}><Link to="/leituras" className="btn btn-green">Ver todos os ciclos →</Link></p>
-      </Section>
+      <Sobre />
+      <Leituras />
 
-      <Section tint="purple" eyebrow="03 / BORA FAZER PARTE?" title="Sua próxima boa troca começa aqui.">
+      <Section eyebrow="BORA FAZER PARTE?" title="Sua próxima boa troca começa aqui.">
         <div className="grid grid-3">
           {passos.map(([n, t, d]) => (
             <article key={n} className="card"><p className="big-num">{n}</p><h3>{t}</h3><p>{d}</p></article>
           ))}
         </div>
-        <p><Link to="/contato" className="btn btn-purple">Quero participar ↗</Link></p>
       </Section>
+
+      {/* <FAQ /> */}
+      <Contato />
     </>
   )
 }
