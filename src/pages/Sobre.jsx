@@ -7,7 +7,7 @@ const pilares = [
   ['DISCUTA', 'green', 'Compartilhe sua visão, escute outras vozes e transforme dúvidas em conversas.'],
   ['EVOLUA', 'pink', 'Leve novas perspectivas para a vida. Aprender junto é ir mais longe.'],
 ]
-
+ 
 export default function Sobre() {
   return (
     <>
