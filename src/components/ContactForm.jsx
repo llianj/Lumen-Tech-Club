@@ -48,10 +48,10 @@ export default function ContactForm({ tipos, tipoInicial, titulo }) {
       <label>Mensagem *
         <textarea name="mensagem" rows="5" required placeholder="Conta para a gente..." />
       </label>
-      <label className="check">
+      {/* <label className="check">
         <input type="checkbox" checked={anon} onChange={(e) => setAnon(e.target.checked)} />
         Enviar anonimamente (sem nome e e-mail)
-      </label>
+      </label> */}
       <button className="btn btn-purple" disabled={status === 'sending'}>
         {status === 'sending' ? 'Enviando...' : 'Enviar mensagem'}
       </button>

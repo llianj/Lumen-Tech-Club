@@ -1,12 +1,28 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && (request.auth.uid in ['g4CNFzRxNNfT9m8ewNZQ48tGi0M2']
+          || exists(/databases/$(database)/documents/admins/$(request.auth.uid)));
+    }
+
     // Qualquer visitante pode LER; só o(s) administrador(es) abaixo podem ESCREVER.
     match /{colecao}/{docId} {
       allow read: if colecao in ['cycles', 'team', 'faq'];
       allow write: if colecao in ['cycles', 'team', 'faq']
-                   && request.auth != null
-                   && request.auth.uid in ['COLE_AQUI_O_UID_DO_ADMIN'];
+                   && isAdmin();
+    }
+
+    match /admins/{adminId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin()
+        && request.resource.data.keys().hasAll(['email', 'criadoEm'])
+        && request.resource.data.keys().hasOnly(['email', 'criadoEm'])
+        && request.resource.data.email is string
+        && request.resource.data.criadoEm is int;
+      allow update: if false;
+      allow delete: if isAdmin() && adminId != request.auth.uid;
     }
   }
 }

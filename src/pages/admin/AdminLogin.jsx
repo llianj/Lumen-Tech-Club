@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext.jsx'
 
 export default function AdminLogin() {
-  const { user, entrar } = useAuth()
+  const { user, entrar, recuperarSenha } = useAuth()
   const navegar = useNavigate()
+  const [email, setEmail] = useState('')
   const [erro, setErro] = useState('')
+  const [info, setInfo] = useState('')
   const [ocupado, setOcupado] = useState(false)
 
   useEffect(() => { if (user) navegar('/admin/painel', { replace: true }) }, [user, navegar])
@@ -22,14 +24,35 @@ export default function AdminLogin() {
     setOcupado(false)
   }
 
+  async function esqueci() {
+    setErro('')
+    setInfo('')
+    if (!email.trim()) {
+      setErro('Digite seu e-mail acima para recuperar a senha.')
+      return
+    }
+
+    setOcupado(true)
+    try {
+      await recuperarSenha(email.trim())
+      setInfo('Se o e-mail estiver cadastrado, você receberá um link para redefinir a senha.')
+    } catch (err) {
+      setErro(err.message)
+    } finally {
+      setOcupado(false)
+    }
+  }
+
   return (
     <div className="container admin-wrap">
       <form className="card form" onSubmit={aoEnviar}>
         <h2>Área do adm ne bb</h2>
-        <label>E-mail<input type="email" name="email" required autoComplete="username" /></label>
+        <label>E-mail<input type="email" name="email" required autoComplete="username" value={email} onChange={(e) => setEmail(e.target.value)} /></label>
         <label>Senha<input type="password" name="senha" required autoComplete="current-password" /></label>
         <button className="btn btn-purple" disabled={ocupado}>{ocupado ? 'Entrando...' : 'Entrar'}</button>
+        <button type="button" className="btn btn-sm" onClick={esqueci} disabled={ocupado}>Esqueci a senha</button>
         {erro && <p className="msg err">{erro}</p>}
+        {info && <p className="msg ok">{info}</p>}
       </form>
     </div>
   )

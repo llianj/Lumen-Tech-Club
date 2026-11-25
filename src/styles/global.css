@@ -187,3 +187,31 @@ p{margin-bottom:16px}
 .msg{margin:12px 0}
 @media (max-width:520px){.admin-item{flex-wrap:wrap}}
 .admin-wrap > .form{margin:0 auto}
+
+/* ===== ADMIN CARD + GERENCIAMENTO DE ADMINS ===== */
+.admin-card{background:var(--card);border:var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 24px;margin-bottom:28px}
+.admin-card .admin-top{margin-bottom:18px}
+.admin-card .admin-tabs{margin:0}
+.admin-titulo{margin:0 0 16px}
+.admin-users-form{display:grid;gap:16px;max-width:520px;background:var(--card);border:var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin-bottom:28px}
+.admin-users-form label{display:grid;gap:6px;font-family:var(--f-mono);font-size:.75rem}
+.admin-users-form .req{color:var(--accent)}
+.admin-users-form input{font:1rem var(--f-body);padding:12px 14px;background:var(--bg);color:var(--text);border:var(--border);border-radius:var(--radius);width:100%}
+.admin-users-form input:focus{outline:3px solid var(--accent);outline-offset:1px}
+.admin-lista{list-style:none;padding:0;margin:0;display:grid;gap:10px;max-width:520px}
+.admin-lista li{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--card);border:var(--border);border-radius:var(--radius);padding:10px 14px}
+
+/* ===== IMAGE CROP MODAL ===== */
+.crop-fundo{position:fixed;inset:0;z-index:1000;background:rgba(17,17,17,.6);display:grid;place-items:center;padding:16px;overflow-y:auto}
+.crop-caixa{background:var(--card);color:var(--text);border:var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px;width:min(440px,100%);max-height:calc(100dvh - 32px);overflow-y:auto;display:grid;gap:14px;justify-items:center}
+.crop-caixa h3{margin:0;justify-self:start}
+.crop-moldura{position:relative;box-sizing:content-box;max-width:100%;overflow:hidden;border:var(--border);border-radius:var(--radius);background:var(--surface-2);cursor:grab;touch-action:none}
+.crop-moldura:active{cursor:grabbing}
+.crop-moldura img{position:absolute;max-width:none;user-select:none;pointer-events:none}
+.crop-dica{margin:0;font-size:.72rem}
+.crop-linha{display:grid;gap:6px;width:100%;font-family:var(--f-mono);font-size:.75rem}
+.crop-linha input[type='range']{width:100%;accent-color:var(--accent)}
+.crop-opcoes{display:flex;flex-wrap:wrap;gap:8px}
+.crop-caixa .btn.on,.crop-caixa .btn.primary{background:var(--purple);color:var(--on-color)}
+.crop-acoes{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;width:100%}
+@media (max-width:520px){.admin-card{padding:16px}.admin-lista li{align-items:flex-start;flex-direction:column}}
