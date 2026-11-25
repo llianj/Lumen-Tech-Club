@@ -1,5 +1,7 @@
 import Section from '../components/Section.jsx'
 import Star from '../components/Star.jsx'
+import Carousel from '../components/Carousel.jsx'
+import MemberCard from '../components/MemberCard.jsx'
 import { team } from '../data/team.js'
 
 const pilares = [
@@ -7,7 +9,7 @@ const pilares = [
   ['DISCUTA', 'green', 'Compartilhe sua visão, escute outras vozes e transforme dúvidas em conversas.'],
   ['EVOLUA', 'pink', 'Leve novas perspectivas para a vida. Aprender junto é ir mais longe.'],
 ]
- 
+
 export default function Sobre() {
   return (
     <>
@@ -31,14 +33,7 @@ export default function Sobre() {
       </Section>
 
       <Section tint="green" eyebrow="03 / QUEM FAZ ACONTECER" title="Quem está por trás do Lúmen">
-        <div className="grid grid-4">
-          {team.map((m, i) => (
-            <article key={i} className="card team">
-              <div className={`avatar c-${m.cor}`}>{m.nome.split(' ').map((p) => p[0]).slice(0, 2).join('')}</div>
-              <h3>{m.nome}</h3><p className="mono">{m.funcao}</p>
-            </article>
-          ))}
-        </div>
+        <Carousel label="Membros do Lúmen" items={team} renderItem={(m) => <MemberCard membro={m} />} />
       </Section>
     </>
   )
