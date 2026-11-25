@@ -1,18 +1,16 @@
 import { useEffect, useRef, useState } from 'react'
 
-// Carrossel circular: o card ativo fica no centro e o anterior/próximo aparecem
-// menores nas laterais. Na primeira posição, "voltar" leva ao último (e vice-versa).
+
 export default function Carousel({ items, renderItem, label }) {
   const n = items.length
   const [i, setI] = useState(0)
-  const prevI = useRef(0)       // posição anterior (para detectar saltos de volta ao início/fim)
+  const prevI = useRef(0)       
   const startX = useRef(null)
   const dragged = useRef(false)
 
   useEffect(() => { prevI.current = i }, [i])
 
   const go = (k) => setI(((k % n) + n) % n)
-  // distância circular de um item até a posição `from` (negativo = esquerda)
   const offset = (idx, from) => {
     let o = idx - from
     if (o > n / 2) o -= n

@@ -8,9 +8,9 @@ import FAQ from './FAQ.jsx'
 import Contato from './Contato.jsx'
 
 const passos = [
-  ['01', 'Dê um oi.', 'Fale com a gente por e-mail ou Instagram e conte que quer participar.'],
-  ['02', 'Encontre sua turma.', 'Receba as informações sobre vagas, leituras e próximos encontros.'],
-  ['03', 'Leia e venha trocar.', 'Traga suas ideias, suas perguntas e seu jeito de ver o mundo.'],
+  ['01', 'Dê um oi.', 'Fale com a gente por e-mail ou Instagram e conte que quer participar'],
+  ['02', 'Encontre seu lugar.', 'Receba as informações sobre vagas, leituras e próximos encontros'],
+  ['03', 'Leia e venha trocar.', 'Traga suas ideias, suas perguntas e seu jeito de ver o mundo'],
 ]
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
             </h1>
             <p className="lead">Para quem ama tecnologia e acredita que as melhores ideias nascem de uma boa conversa.</p>
             <Link to="/contato" className="btn btn-purple">Quero participar ↗</Link>
-            <p className="mono small">Sem pré-requisitos. Com muita curiosidade.</p>
+            <p className="mono small"></p>
           </div>
           <div className="card hero-card c-lilac">
             <span className="tag">ABERTO A NOVAS IDEIAS</span>
@@ -38,10 +38,12 @@ export default function Home() {
       </section>
       <div className="strip"><div className="container">MENOS SCROLL. MAIS TROCA. ✦ CONHECIMENTO SE MULTIPLICA.</div></div>
 
-      <Section tint="green" eyebrow="PODE CHEGAR" title="Preciso programar?">
+
+{/* seção sem sentido e feiaaaaa */}
+      {/* <Section tint="green" eyebrow="PODE CHEGAR" title="Preciso programar?">
         <p className="answer card c-green">Não! Só precisa ter curiosidade.</p>
         <p>Nem saber código. Nem ler rápido. Nem já conhecer todos os assuntos. Seu ponto de vista já tem lugar aqui.</p>
-      </Section>
+      </Section> */}
 
       <Sobre />
       <Leituras />
@@ -54,8 +56,8 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* <FAQ /> */}
-      <Contato />
+      <FAQ />
+      {/* <Contato /> */}
     </>
   )
 }

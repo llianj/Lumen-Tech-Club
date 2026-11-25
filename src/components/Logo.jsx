@@ -1,6 +1,4 @@
-// Arquivos em public/ (renomeados sem espaços e em minúsculas):
-//   logo-colorida.svg -> tema claro | logo-branca.svg -> tema escuro e rodapé
-// Para trocar por outra versão, é só mudar os dois caminhos abaixo.
+
 const LOGO_CLARO = '/logo-colorida.svg'
 const LOGO_ESCURO = '/logo-branca.svg'
 

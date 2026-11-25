@@ -21,10 +21,12 @@ export default function Sobre() {
           <p>Aqui, a leitura é ponto de partida para compartilhar experiências, fazer perguntas e descobrir novas perspectivas. Sem competição e sem precisar saber tudo: a gente aprende junto.</p>
           <div className="tags"><span className="tag c-purple">LIVROS</span><span className="tag c-green">TECNOLOGIA</span><span className="tag c-pink">COMUNIDADE</span></div>
         </div>
+
+        {/* ESSA DESGRAÇA DE ESTRELA FICA EMBAIXO DA DIV E EU NAO SEI AJEITAR AAAAAAAAAAA */}
         <Star size={56} color="var(--green)" />
       </Section>
 
-      <Section eyebrow="02 / NOSSO JEITO DE CRESCER" title="Três verbos. Infinitas possibilidades.">
+      <Section eyebrow="02 / NOSSO JEITO DE CRESCER" title="Três verbos, infinitas possibilidades.">
         <div className="grid grid-3">
           {pilares.map(([t, c, d]) => (
             <article key={t} className={`card c-${c}`}><span className="tag">{t}</span><h3>Novas páginas. Novas ideias.</h3><p>{d}</p></article>
@@ -32,7 +34,7 @@ export default function Sobre() {
         </div>
       </Section>
 
-      <Section tint="green" eyebrow="03 / QUEM FAZ ACONTECER" title="Quem está por trás do Lúmen">
+      <Section tint="green" eyebrow="03 / QUEM FAZ ACONTECER" title="Quem está por trás do Lúmen?">
         <Carousel label="Membros do Lúmen" items={team} renderItem={(m) => <MemberCard membro={m} />} />
       </Section>
     </>
