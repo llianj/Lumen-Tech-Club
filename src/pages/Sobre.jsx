@@ -2,7 +2,8 @@ import Section from '../components/Section.jsx'
 import Star from '../components/Star.jsx'
 import Carousel from '../components/Carousel.jsx'
 import MemberCard from '../components/MemberCard.jsx'
-import { team } from '../data/team.js'
+import { team as padrao } from '../data/team.js'
+import { useContent } from '../services/content.js'
 
 const pilares = [
   ['LEIA', 'purple', 'Explore livros, descubra ideias e olhe para a tecnologia por outros ângulos.'],
@@ -11,6 +12,7 @@ const pilares = [
 ]
 
 export default function Sobre() {
+  const team = useContent('team', padrao, 'ordem')
   return (
     <>
       <Section tint="purple" eyebrow="01 / SOBRE O CLUBE" title="Um livro abre a conversa. Você faz o resto.">
@@ -21,12 +23,10 @@ export default function Sobre() {
           <p>Aqui, a leitura é ponto de partida para compartilhar experiências, fazer perguntas e descobrir novas perspectivas. Sem competição e sem precisar saber tudo: a gente aprende junto.</p>
           <div className="tags"><span className="tag c-purple">LIVROS</span><span className="tag c-green">TECNOLOGIA</span><span className="tag c-pink">COMUNIDADE</span></div>
         </div>
-
-        {/* ESSA DESGRAÇA DE ESTRELA FICA EMBAIXO DA DIV E EU NAO SEI AJEITAR AAAAAAAAAAA */}
         <Star size={56} color="var(--green)" />
       </Section>
 
-      <Section eyebrow="02 / NOSSO JEITO DE CRESCER" title="Três verbos, infinitas possibilidades.">
+      <Section eyebrow="02 / NOSSO JEITO DE CRESCER" title="Três verbos. Infinitas possibilidades.">
         <div className="grid grid-3">
           {pilares.map(([t, c, d]) => (
             <article key={t} className={`card c-${c}`}><span className="tag">{t}</span><h3>Novas páginas. Novas ideias.</h3><p>{d}</p></article>
@@ -34,7 +34,7 @@ export default function Sobre() {
         </div>
       </Section>
 
-      <Section tint="green" eyebrow="03 / QUEM FAZ ACONTECER" title="Quem está por trás do Lúmen?">
+      <Section tint="green" eyebrow="03 / QUEM FAZ ACONTECER" title="Quem está por trás do Lúmen">
         <Carousel label="Membros do Lúmen" items={team} renderItem={(m) => <MemberCard membro={m} />} />
       </Section>
     </>

@@ -1,9 +1,11 @@
 import Section from '../components/Section.jsx'
 import Accordion from '../components/Accordion.jsx'
 import ContactForm from '../components/ContactForm.jsx'
-import { faq } from '../data/faq.js'
+import { faq as padrao } from '../data/faq.js'
+import { useContent } from '../services/content.js'
 
 export default function FAQ() {
+  const faq = useContent('faq', padrao, 'ordem')
   return (
     <>
       <Section tint="pink" eyebrow="SEM MISTÉRIO" title="Talvez você esteja pensando…">

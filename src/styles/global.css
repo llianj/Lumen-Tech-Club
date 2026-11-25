@@ -161,3 +161,29 @@ p{margin-bottom:16px}
 @media (max-width:700px){.slide-card{grid-template-columns:1fr}.cover{max-width:160px}}
 @media (max-width:520px){.section{padding:56px 0}.car-stage{--w:84%;--f:.62}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* ===== PAINEL DO ADMINISTRADOR ===== */
+.admin-wrap{padding-top:40px;padding-bottom:80px;max-width:900px}
+.admin-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.admin-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.admin-tabs button{font:700 .85rem var(--f-mono);padding:10px 16px;background:var(--card);color:var(--text);border:var(--border);border-radius:var(--radius);cursor:pointer}
+.admin-tabs button.on{background:var(--purple);color:var(--on-color);box-shadow:var(--shadow-sm)}
+.admin-head{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:12px}
+.admin-head h2{margin:0;font-size:1.8rem}
+.admin-list{list-style:none;display:grid;gap:16px;margin-top:16px}
+.admin-item{display:flex;align-items:center;gap:16px;padding:16px;box-shadow:var(--shadow-sm)}
+.admin-info{flex:1;min-width:0;overflow-wrap:anywhere}
+.admin-actions{display:flex;gap:10px;flex-wrap:wrap}
+.admin-form{max-width:none;margin-top:16px}
+.btn-sm{padding:8px 14px;font-size:.8rem;box-shadow:var(--shadow-sm)}
+.btn-danger{background:var(--rose,#E1446E);color:#fff}
+[data-theme='dark'] .btn-danger{background:var(--coral);color:var(--on-color)}
+.thumb{width:110px;aspect-ratio:2/3;object-fit:cover;border:var(--border);border-radius:var(--radius);background:var(--surface-2)}
+.thumb.mini{width:48px;border-width:2px;border-radius:8px}
+.thumb.vazio{display:grid;place-items:center;font:.7rem var(--f-mono);color:var(--muted);text-align:center}
+.img-field{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.img-actions{display:flex;gap:10px;flex-wrap:wrap}
+.field{display:grid;gap:6px}
+.msg{margin:12px 0}
+@media (max-width:520px){.admin-item{flex-wrap:wrap}}
+.admin-wrap > .form{margin:0 auto}

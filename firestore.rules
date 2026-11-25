@@ -1,0 +1,12 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Qualquer visitante pode LER; só o(s) administrador(es) abaixo podem ESCREVER.
+    match /{colecao}/{docId} {
+      allow read: if colecao in ['cycles', 'team', 'faq'];
+      allow write: if colecao in ['cycles', 'team', 'faq']
+                   && request.auth != null
+                   && request.auth.uid in ['COLE_AQUI_O_UID_DO_ADMIN'];
+    }
+  }
+}

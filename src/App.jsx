@@ -1,5 +1,5 @@
+import { lazy, Suspense, useEffect } from 'react'
 import { Routes, Route, Outlet, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
@@ -8,11 +8,14 @@ import Leituras from './pages/Leituras.jsx'
 import FAQ from './pages/FAQ.jsx'
 import Contato from './pages/Contato.jsx'
 
+// O painel é carregado só quando alguém entra em /admin.
+const AdminArea = lazy(() => import('./pages/admin/AdminArea.jsx'))
+
 function Layout() {
   const { pathname } = useLocation()
   useEffect(() => {
-  window.scrollTo(0, 0)
-}, [pathname])
+    window.scrollTo(0, 0)
+  }, [pathname])
   return (
     <>
       <Navbar />
@@ -33,6 +36,7 @@ export default function App() {
         <Route path="/contato" element={<Contato />} />
         <Route path="*" element={<Home />} />
       </Route>
+      <Route path="/admin/*" element={<Suspense fallback={null}><AdminArea /></Suspense>} />
     </Routes>
   )
 }
