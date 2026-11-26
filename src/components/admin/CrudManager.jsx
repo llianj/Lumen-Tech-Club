@@ -80,9 +80,23 @@ export default function CrudManager({ colecao, titulo, campos, ordenarPor, padra
                 {c.tipo === 'textarea' ? (
                   <textarea rows="4" value={form[c.nome] ?? ''} onChange={(e) => set(c.nome, e.target.value)} />
                 ) : c.tipo === 'select' ? (
-                  <select value={form[c.nome] ?? ''} onChange={(e) => set(c.nome, e.target.value)}>
-                    {c.opcoes.map((o) => <option key={o.v} value={o.v}>{o.l}</option>)}
-                  </select>
+                  c.nome === 'cor' ? (
+                    <div className="color-select-field">
+                      <select value={form[c.nome] ?? ''} onChange={(e) => set(c.nome, e.target.value)}>
+                        {c.opcoes.map((o) => <option key={o.v} value={o.v}>{o.l}</option>)}
+                      </select>
+                      <span
+                        className="color-preview"
+                        style={{ '--preview-color': `var(--${form[c.nome] === 'pink' ? 'coral' : form[c.nome]})` }}
+                        title={`Cor selecionada: ${c.opcoes.find((o) => o.v === form[c.nome])?.l || ''}`}
+                        aria-label={`Cor selecionada: ${c.opcoes.find((o) => o.v === form[c.nome])?.l || ''}`}
+                      />
+                    </div>
+                  ) : (
+                    <select value={form[c.nome] ?? ''} onChange={(e) => set(c.nome, e.target.value)}>
+                      {c.opcoes.map((o) => <option key={o.v} value={o.v}>{o.l}</option>)}
+                    </select>
+                  )
                 ) : (
                   <input type={c.tipo === 'numero' ? 'number' : 'text'} value={form[c.nome] ?? ''}
                     onChange={(e) => set(c.nome, e.target.value)} />

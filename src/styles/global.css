@@ -140,6 +140,8 @@ p{margin-bottom:16px}
 .form label{display:grid;gap:6px;font-family:var(--f-mono);font-size:.85rem}
 .form input,.form select,.form textarea{width:100%;padding:12px;font:1rem var(--f-body);color:var(--text);background:var(--bg);border:var(--border);border-radius:var(--radius)}
 .form input:disabled{opacity:.5}
+.color-select-field{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:10px;align-items:center}
+.color-preview{width:44px;height:44px;background:var(--preview-color,var(--surface-2));border:var(--border);border-radius:8px;box-shadow:var(--shadow-sm)}
 .password-field{position:relative}
 .password-field input{padding-right:48px}
 .password-toggle{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:36px;height:36px;padding:0;display:grid;place-items:center;background:transparent;color:var(--text);border:0;border-radius:6px;cursor:pointer}
