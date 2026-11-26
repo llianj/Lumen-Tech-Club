@@ -46,7 +46,7 @@ export default function AdminLogin() {
   return (
     <div className="container admin-wrap">
       <form className="card form" onSubmit={aoEnviar}>
-        <h2>Área do adm ne bb</h2>
+        <h2>Painel Administrativo</h2>
         <label>E-mail<input type="email" name="email" required autoComplete="username" value={email} onChange={(e) => setEmail(e.target.value)} /></label>
         <label>Senha<input type="password" name="senha" required autoComplete="current-password" /></label>
         <button className="btn btn-purple" disabled={ocupado}>{ocupado ? 'Entrando...' : 'Entrar'}</button>
