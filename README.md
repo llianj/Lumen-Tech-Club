@@ -37,7 +37,6 @@ O projeto foi desenvolvido nas linguagens de marcação HTML e CSS junto das lin
 - Node.js
 - npm
 
-Não há versões fixadas de Node.js no projeto. Recomenda-se utilizar uma versão atual compatível com o Vite.
 
 ## Como executar
 
@@ -60,15 +59,12 @@ npm install
 cp .env.example .env.local
 ```
 
-No Windows, caso o comando `cp` não esteja disponível, crie o arquivo `.env.local` manualmente com base em `.env.example`.
-
 4. Inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
 ```
 
-O endereço exibido pelo Vite será mostrado no terminal, normalmente em `http://localhost:5173`.
 
 ## Configuração do Formspree
 
@@ -77,8 +73,6 @@ Crie um formulário no [Formspree](https://formspree.io/) e informe o endpoint n
 ```env
 VITE_FORMSPREE_URL=https://formspree.io/f/endereço_de_endpoint
 ```
-
-Sem essa variável, o formulário mostrará uma mensagem de erro no envio.
 
 As mensagens são enviadas em JSON e incluem o nome, o e-mail, o assunto e a mensagem.
 
@@ -164,17 +158,3 @@ Lumen-Tech-Club/
 ├── package.json             # Dependências e scripts
 └── vite.config.js           # Configuração do Vite
 ```
-
-## Principais pastas
-
-Os principais dados do site estão separados em arquivos simples:
-
-- `src/data/books.js`: livros e status dos ciclos
-- `src/data/faq.js`: perguntas e respostas frequentes
-- `src/data/team.js`: nomes e funções da equipe
-- `src/data/site.js`: nome, e-mail e perfil do Instagram
-- `src/services/content.js`: leitura do Firestore com cache local e dados padrão
-- `src/services/adminService.js`: operações administrativas no Firestore
-- `src/lib/firebase.js`: inicialização do Firebase
-- `src/lib/cloudinary.js`: processamento e upload de imagens
-
