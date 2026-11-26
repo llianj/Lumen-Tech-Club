@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Logo from './Logo.jsx'
+import InstagramLink from './InstagramLink.jsx'
 import { site } from '../data/site.js'
 
 export default function Footer() {
@@ -12,7 +13,7 @@ export default function Footer() {
           <Link to="/faq">FAQ</Link><Link to="/contato">Contato</Link>
         </nav>
         <p className="mono">
-          <a href={site.instagramUrl} target="_blank" rel="noreferrer">@{site.instagram}</a><br />
+          <InstagramLink /><br />
           © {new Date().getFullYear()} {site.nome}
         </p>
       </div>

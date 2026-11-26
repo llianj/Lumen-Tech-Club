@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 
 
-export default function Carousel({ items, renderItem, label }) {
+export default function Carousel({ items, renderItem, label, initialIndex = 0 }) {
   const n = items.length
-  const [i, setI] = useState(0)
-  const prevI = useRef(0)       
+  const [i, setI] = useState(() => n > 0 ? Math.min(Math.max(initialIndex, 0), n - 1) : 0)
+  const prevI = useRef(i)
   const startX = useRef(null)
   const dragged = useRef(false)
 

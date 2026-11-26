@@ -101,6 +101,8 @@ p{margin-bottom:16px}
 
 /* ===== SOBRE ===== */
 .paper{position:relative;max-width:720px;transform:rotate(-1deg)}
+.paper .sobre-star{position:absolute;top:16px;right:16px;z-index:1}
+.paper h3{padding-right:56px}
 .tape{position:absolute;top:-16px;left:50%;width:110px;height:30px;transform:translateX(-50%) rotate(2deg);background:var(--spark);opacity:.85;border:2px solid var(--ink)}
 .paper .tags{margin-top:8px}
 
@@ -149,6 +151,8 @@ p{margin-bottom:16px}
 .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
 .footer-links{display:flex;gap:24px;font-family:var(--f-mono);font-size:.85rem}
 .footer a{text-decoration:none}.footer a:hover{text-decoration:underline}
+.instagram-link{display:inline-flex;align-items:center;gap:7px}
+.instagram-link svg{flex:none}
 
 /* ===== RESPONSIVO ===== */
 @media (max-width:900px){

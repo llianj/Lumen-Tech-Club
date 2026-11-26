@@ -15,15 +15,15 @@ export default function Sobre() {
   const team = useContent('team', padrao, 'ordem')
   return (
     <>
-      <Section tint="purple" eyebrow="01 / SOBRE O CLUBE" title="Um livro abre a conversa. Você faz o resto.">
+      <Section tint="purple" eyebrow="01 / SOBRE O CLUBE" title="Um livro abre a conversa, você faz o resto.">
         <div className="card paper">
           <span className="tape" />
+          <Star size={56} color="var(--green)" className="sobre-star"/>
           <h3>O que é o Lúmen?</h3>
           <p>O Lúmen Tech Club é uma comunidade para jovens leitores que amam tecnologia; para quem quer compartilhar experiências, ler, conversar e crescer juntos.</p>
           <p>Aqui, a leitura é ponto de partida para compartilhar experiências, fazer perguntas e descobrir novas perspectivas. Sem competição e sem precisar saber tudo: a gente aprende junto.</p>
           <div className="tags"><span className="tag c-purple">LIVROS</span><span className="tag c-green">TECNOLOGIA</span><span className="tag c-pink">COMUNIDADE</span></div>
         </div>
-        <Star size={56} color="var(--green)" />
       </Section>
 
       <Section eyebrow="02 / NOSSO JEITO DE CRESCER" title="Três verbos. Infinitas possibilidades.">
