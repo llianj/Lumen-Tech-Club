@@ -225,3 +225,9 @@ p{margin-bottom:16px}
 .crop-caixa .btn.on,.crop-caixa .btn.primary{background:var(--purple);color:var(--on-color)}
 .crop-acoes{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;width:100%}
 @media (max-width:520px){.admin-card{padding:16px}.admin-lista li{align-items:flex-start;flex-direction:column}}
+
+/* ===== PÁGINA HeIsBehindTheTree ===== */
+.he-is-behind-the-tree{flex:1;min-height:100vh;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:24px;background:#000;color:#F6F4EF;text-align:center}
+.he-is-behind-the-tree__tree{width:min(80vw,560px);max-height:68vh;object-fit:contain;image-rendering:pixelated}
+.he-is-behind-the-tree__home-button{padding:10px 16px;border:1px solid currentColor;border-radius:6px;background:transparent;color:inherit;font:700 .85rem var(--f-mono);cursor:pointer}
+.he-is-behind-the-tree__home-button:hover{background:#F6F4EF;color:#000}

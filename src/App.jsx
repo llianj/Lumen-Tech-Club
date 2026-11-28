@@ -7,8 +7,8 @@ import Sobre from './pages/Sobre.jsx'
 import Leituras from './pages/Leituras.jsx'
 import FAQ from './pages/FAQ.jsx'
 import Contato from './pages/Contato.jsx'
+import HeIsBehindTheTree from './pages/HeIsBehindTheTree.jsx'
 
-// O painel é carregado só quando alguém entra em /admin.
 const AdminArea = lazy(() => import('./pages/admin/AdminArea.jsx'))
 
 function Layout() {
@@ -34,9 +34,9 @@ export default function App() {
         <Route path="/leituras" element={<Leituras />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/contato" element={<Contato />} />
-        <Route path="*" element={<Home />} />
       </Route>
       <Route path="/admin/*" element={<Suspense fallback={null}><AdminArea /></Suspense>} />
+      <Route path="*" element={<HeIsBehindTheTree />} />
     </Routes>
   )
 }
