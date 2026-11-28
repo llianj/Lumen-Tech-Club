@@ -231,3 +231,4 @@ p{margin-bottom:16px}
 .he-is-behind-the-tree__tree{width:min(80vw,560px);max-height:68vh;object-fit:contain;image-rendering:pixelated}
 .he-is-behind-the-tree__home-button{padding:10px 16px;border:1px solid currentColor;border-radius:6px;background:transparent;color:inherit;font:700 .85rem var(--f-mono);cursor:pointer}
 .he-is-behind-the-tree__home-button:hover{background:#F6F4EF;color:#000}
+.he-is-behind-the-tree__text{padding:10px 16px;border:0px solid currentColor;border-radius:0px;background:transparent;color:inherit;font: 800 clamp(1.25rem, 3vw, 1.5rem) var(--f-mono);}

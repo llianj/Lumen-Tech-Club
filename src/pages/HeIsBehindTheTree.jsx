@@ -39,9 +39,11 @@ export default function HeIsBehindTheTree() {
       <img
         className="he-is-behind-the-tree__tree"
         src="/egg.gif"
-        alt="Ele está atrás da árvore. Você não deveria estar aqui."
+        alt="Ele está atrás da árvore"
       />
-      {/* Ele está atrás da árvore. Você não deveria estar aqui. */}
+      <p className="he-is-behind-the-tree__text">
+        Página não encontrada
+      </p>
       <button
         className="he-is-behind-the-tree__home-button"
         type="button"

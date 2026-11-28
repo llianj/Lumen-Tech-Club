@@ -38,7 +38,7 @@ export default function NotFound() {
       <img
         className="easter-egg__tree"
         src="/egg.gif"
-        alt="Ele está atrás da árvore. Você não deveria estar aqui."
+        alt="Árvore"
       />
       <p>Esta página não existe.</p>
       <div className="easter-egg__actions">
